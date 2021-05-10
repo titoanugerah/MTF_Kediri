@@ -5,6 +5,12 @@
 !*/cache/index.html
 !*/cache/.htaccess
 
+application/config/config.php
+application/config/database.php
+application/config/routes.php
+application/config/autoload.php
+
+assets/client_credentials.json
 user_guide_src/build/*
 user_guide_src/cilexer/build/*
 user_guide_src/cilexer/dist/*
