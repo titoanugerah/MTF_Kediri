@@ -18,6 +18,12 @@ $route['api/termsCMS/read'] = 'termsCMS/read';
 $route['api/termsCMS/update'] = 'termsCMS/update';
 $route['api/termsCMS/upload'] = 'termsCMS/upload';
 
+#CONTACT CMS
+$route['contactCMS'] = 'contactCMS';
+$route['api/contactCMS/read'] = 'contactCMS/read';
+$route['api/contactCMS/update'] = 'contactCMS/update';
+$route['api/contactCMS/upload'] = 'contactCMS/upload';
+
 #ROLE
 $route['role'] = 'role';
 $route['api/role/read'] = 'role/read';
