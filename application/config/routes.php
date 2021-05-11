@@ -16,8 +16,6 @@ $route['api/role/create'] = 'role/create';
 $route['api/role/delete'] = 'role/delete';
 $route['api/role/update'] = 'role/update';
 
-
-
 $route['template'] = 'general/template';
 $route['404_override'] = 'errors';
 $route['translate_uri_dashes'] = FALSE;
