@@ -28,13 +28,31 @@
           <div class="tab-content mt-2 mb-3" >
             <div class="tab-pane fade show active" id="tab1" role="tabpanel" >
               <div class="card-body">
-                
+                <div class="row">
+                  <div class="form-group col-md-4">
+                    <label>Nama</label>
+                    <input type="text" class="form-control" id="name" value="">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label>Email</label>
+                    <input type="email" class="form-control" id="email" value="">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label>Whatsapp</label>
+                    <input type="text" class="form-control" id="whatsapp" value="">
+                  </div>
+
+                  <div class="form-group col-md-12">
+                    <label>Alamat</label>
+                    <textarea class="form-control" id="address" rows="2"></textarea>
+                  </div>
+                </div>
                 <button class="btn btn-success" onclick="updateContent()">Simpan</button>
               </div>
           </div>
           <div class="tab-pane fade show" id="tab2" role="tabpanel" >
             <div class="input-file input-file-image">
-              <img class="img-upload-preview" width="1000" src="http://placehold.it/1000x300" alt="preview" id="imageProduct">
+              <img class="img-upload-preview" width="1000" src="http://placehold.it/1000x300" alt="preview" id="image">
               <input type="file" class="form-control form-control-file" id="fileUpload" name="fileUpload" accept="image/*" required="">
               <label for="fileUpload" class="  label-input-file btn btn-success">
                 <span class="btn-label btn-info"><i class="fa fa-file-image"></i></span>Pilih Foto

@@ -12,6 +12,14 @@ function getContent(){
     dataType : "JSON",
     url: "api/contactCMS/read",
     success: function(result) {
+      $('#name').val(result.name);
+      $('#email').val(result.email);
+      $('#whatsapp').val(result.whatsapp);
+      $('#address').val(result.address);
+      if(result.image!=null){
+        $('#image').attr('src', 'assets/picture/'+result.image);
+      }
+      
 //        $('#summernote').summernote('code', result.description);
     },error: function(result) {
       console.log(result);
@@ -26,8 +34,10 @@ function updateContent(){
         type: "POST",
         dataType : "JSON",
         data: {
-            id : 2,
-            description : $('#summernote').summernote('code')
+            name : $('#name').val(),
+            email : $('#email').val(),
+            whatsapp : $('#whatsapp').val(),
+            address : $('#address').val(),
         },
         url: "api/contactCMS/update",
         success: function(result) {
