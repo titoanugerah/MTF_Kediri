@@ -23,29 +23,9 @@ class HomeCMS extends CI_Controller
     echo $this->homeCMS_model->read();
   }
 
-  public function readDetail()
-  {
-    echo $this->homeCMS_model->readDetail();
-  }
-
-  public function recover()
-  {
-    echo $this->homeCMS_model->recover();
-  }
-
-  public function create()
-  {
-    echo $this->homeCMS_model->create();
-  }
-
   public function update()
   {
     echo $this->homeCMS_model->update();
-  }
-
-  public function delete()
-  {
-    echo $this->homeCMS_model->delete();
   }
 
 }

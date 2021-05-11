@@ -9,12 +9,8 @@ $route['logout'] = 'auth/logout';
 
 #HOME CMS
 $route['homeCMS'] = 'homeCMS';
-$route['api/role/read'] = 'role/read';
-$route['api/role/readDetail'] = 'role/readDetail';
-$route['api/role/recover'] = 'role/recover';
-$route['api/role/create'] = 'role/create';
-$route['api/role/delete'] = 'role/delete';
-$route['api/role/update'] = 'role/update';
+$route['api/homeCMS/read'] = 'homeCMS/read';
+$route['api/homeCMS/update'] = 'homeCMS/update';
 
 
 #ROLE

@@ -16,13 +16,14 @@
   <div class="row mt--2">
     <div class="col-md-12">
       <div class="row">
-        <div class="card full-height  col-md-9">
+        <div class="card full-height  col-md-12">
           <div class="card-header">
             <div class="card-title">Konten Beranda</div>
             <div class="d-flex flex-wrap justify-content-around pb-2 pt-4"></div>
           </div>
           <div class="card-body">
             <div id="summernote">Hello Summernote</div>
+            <button class="btn btn-success" onclick="updateContent()">Simpan</button>
           </div>
       </div>
     </div>

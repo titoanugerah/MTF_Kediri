@@ -29,48 +29,17 @@ class HomeCms_model extends CI_Model
     }
   }
 
-  public function create()
-  {
-    try
-    {
-      if ($this->session->userdata('roleId')== $this->config->item('admin_role_id'))
-      {
-        return json_encode($this->core_model->createData('area',  $this->input->post()));
-      }
-
-    }
-    catch (Exception $ex)
-    {
-      notify("Gagal", "Terjadi kendala disaat membuat data area : ".$ex->getMessage(), "danger", "fa fa-times", null);
-    }
-  }
-
   public function read()
   {
     try
     {
-      $data['area'] = $this->core_model->readAllData('area');
+      $data = $this->core_model->readSingleData('page', 'id', 1);
+      return json_encode($data);
+ 
     }
     catch (Exception $ex)
     {
-      notify("Gagal", "Terjadi kendala disaat memuat data area : ".$ex->getMessage(), "danger", "fa fa-times", null);
-    }
-    finally
-    {
-      return json_encode($data);
-    }
-  }
-
-  public function readDetail()
-  {
-    try
-    {
-      $data['detail'] = $this->core_model->readSingleData('area', 'id', $this->input->post('id'));
-      return json_encode($data);
-    }
-    catch (Exception $ex)
-    {
-      notify("Gagal", "Terjadi kendala disaat memuat data area : ".$ex->getMessage(), "danger", "fa fa-times", null);
+      notify("Gagal", "Terjadi kendala disaat memuat data konten : ".$ex->getMessage(), "danger", "fa fa-times", null);
     }
   }
 
@@ -80,46 +49,12 @@ class HomeCms_model extends CI_Model
     {
       if ($this->session->userdata('roleId')== $this->config->item('admin_role_id'))
       {
-        return json_encode($this->core_model->updateDataBatch('area',  'id', $this->input->post('id'), $this->input->post()));
+        return json_encode($this->core_model->updateDataBatch('page',  'id', $this->input->post('id'), $this->input->post()));
       }
     }
     catch (Exception $ex)
     {
-      notify("Gagal", "Terjadi kendala disaat update data area : ".$ex->getMessage(), "danger", "fa fa-times", null);
-    }
-  }
-
-  public function recover()
-  {
-    try
-    {
-      if ($this->session->userdata('roleId')== $this->config->item('admin_role_id'))
-      {
-       return json_encode($this->core_model->recoverData('area', 'id', $this->input->post('id')));
-      }
-    }
-    catch (Exception $ex)
-    {
-      notify("Gagal", "Terjadi kendala disaat memulihkan data area : ".$ex->getMessage(), "danger", "fa fa-times", null);
-    }
-  }
-
-  public function delete()
-  {
-    try
-    {
-      if ($this->session->userdata('roleId')== $this->config->item('admin_role_id'))
-      {
-        return json_encode($this->core_model->deleteData('area', 'id', $this->input->post('id')));
-      } 
-      else 
-      {
-        return http_response_code(401);
-      }
-    }
-    catch (Exception $ex)
-    {
-      notify("Gagal", "Terjadi kendala disaat memulihkan data area : ".$ex->getMessage(), "danger", "fa fa-times", null);
+      notify("Gagal", "Terjadi kendala disaat update data konten : ".$ex->getMessage(), "danger", "fa fa-times", null);
     }
   }
 
