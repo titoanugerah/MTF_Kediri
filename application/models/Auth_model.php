@@ -40,49 +40,24 @@ class Auth_model extends CI_Model
         $token = $client->fetchAccessTokenWithAuthCode($this->input->get('code'));
         $client->setAccessToken($token['access_token']);
         $validUser = (new Google_Service_Oauth2($client))->userinfo->get();
-        $isRegisteredUser = $this->core_model->getNumRows('employee', 'email', $validUser->email);
+        $isRegisteredUser = $this->core_model->getNumRows('user', 'email', $validUser->email);
         if ($isRegisteredUser)
         {
           $data = array(
             'name' =>  $validUser->name,
             'image' => $validUser->picture,
           );
-          $this->core_model->updateSomeData('employee', 'email', $validUser->email, $data);
-          $user = $this->core_model->readSingleData('viewEmployee', 'email', $validUser->email);
+          $this->core_model->updateSomeData('user', 'email', $validUser->email, $data);
+          $user = $this->core_model->readSingleData('view_user', 'email', $validUser->email);
           if ($user->isExist)
           {
             $userdata = array(
               'isLogin' => true,
-              'nik' => $user->nik,
               'email' => $user->email,
               'name' => $user->name,
               'image' => $user->image,
               'roleId' => $user->roleId,
               'role' => $user->role,
-              'positionId' => $user->positionId,
-              'position' => $user->position,              
-              'customerId' => $user->customerId,
-              'customer' => $user->customer,
-              'districtId' => $user->districtId,
-              'district' => $user->district,
-              'areaId' => $user->areaId,
-              'area' => $user->area,
-              'bankId' => $user->bankId,
-              'bank' => $user->bank,
-              'bankFullName' => $user->bankFullName,
-              'accountNumber' => $user->accountNumber,
-              'familyStatusId' => $user->familyStatusId,
-              'familyStatus' => $user->familyStatus,
-              'umr' => $user->umr,
-              'umk' => $user->umk,
-              'insentive' => $user->insentive,
-              'premium' => $user->premium,
-              'flatInsentive' => $user->flatInsentive,
-              'phoneInsentive' => $user->phoneInsentive,
-              'limitIncome' => $user->limitIncome,
-              'isRegisteredBpjs' => $user->isRegisteredBpjs,
-              'startContract' => $user->startContract,
-              'endContract' => $user->endContract,
               'isExist' => $user->isExist,
             );
             $this->session->set_userdata($userdata);
@@ -95,7 +70,25 @@ class Auth_model extends CI_Model
         }
         else
         {
-          notify('Gagal', 'Akun anda tidak terdaftar di sistem kami, silahkan hubungi Admin', 'danger', 'fa fa-user', '');
+          $data = array(
+            'name' =>  $validUser->name,
+            'image' => $validUser->picture,
+            'email' => $validUser->email,
+            'roleId' => $this->config->item('visitor_role_id')
+          );
+          $this->core_model->createData('user', $data);
+          $user = $this->core_model->readSingleData('view_user', 'email', $validUser->email);
+          $userdata = array(
+            'isLogin' => true,
+            'email' => $user->email,
+            'name' => $user->name,
+            'image' => $user->image,
+            'roleId' => $user->roleId,
+            'role' => $user->role,
+            'isExist' => $user->isExist,
+          );
+          $this->session->set_userdata($userdata);
+
         }
       }   
     } 

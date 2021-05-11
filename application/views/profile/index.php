@@ -23,50 +23,14 @@
           </div>
           <div class="card-body">
             <div class="row">
-              <div class="form-group col-md-3">
-                <label>NIK</label>
-                <input type="text" class="form-control" id="nik" value="<?php echo $this->session->userdata['nik'] ?>">
-              </div>
 
-              <div class="form-group col-md-5">
+              <div class="form-group col-md-6">
                 <label>Nama Pengguna</label>
                 <input type="text" class="form-control" id="name" value="<?php echo $this->session->userdata['name'] ?>">
               </div>
-              <div class="form-group col-md-4">
+              <div class="form-group col-md-6">
                 <label>Email</label>
                 <input type="email" class="form-control" id="email" value="<?php echo $this->session->userdata['email'] ?>">
-              </div>
-              <div class="form-group col-md-4">
-                <label>Customer</label>
-                <input type="text" class="form-control" id="customer" value="<?php echo $this->session->userdata['customer'] ?>">
-              </div>
-              <div class="form-group col-md-2">
-                <label>Posisi</label>
-                <input type="text" class="form-control" id="position" value="<?php echo $this->session->userdata['position'] ?>">
-              </div>
-              <div class="form-group col-md-3">
-                <label>Area</label>
-                <input type="text" class="form-control" id="area" value="<?php echo $this->session->userdata['area'] ?>">
-              </div>
-              <div class="form-group col-md-3">
-                <label>Distrik</label>
-                <input type="text" class="form-control" id="district" value="<?php echo $this->session->userdata['district'] ?>">
-              </div>
-              <div class="form-group col-md-2">
-                <label>Bank</label>
-                <input type="text" class="form-control" id="bank" value="<?php echo $this->session->userdata['bank'] ?>">
-              </div>
-              <div class="form-group col-md-3">
-                <label>Nomor Rekening</label>
-                <input type="text" class="form-control" id="accountNumber" value="<?php echo $this->session->userdata['accountNumber'] ?>">
-              </div>
-              <div class="form-group col-md-4">
-                <label>Nama Rekening</label>
-                <input type="text" class="form-control" id="accountName" value="<?php echo $this->session->userdata['name'] ?>">
-              </div>
-              <div class="form-group col-md-3">
-                <label>Terdaftar BPJS/KIS</label>
-                <input type="text" class="form-control" id="isRegisteredBpjs" value="<?php if($this->session->userdata['isRegisteredBpjs']){echo 'Terdaftar';} else {echo 'Tidak Terdaftar';} ?>">
               </div>
 
             </div>
