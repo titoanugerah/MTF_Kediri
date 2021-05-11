@@ -12,7 +12,10 @@ function getContent(){
     dataType : "JSON",
     url: "api/termsCMS/read",
     success: function(result) {
-        $('#summernote').summernote('code', result.description);
+      $('#summernote').summernote('code', result.description);
+      if(result.image!=null){
+        $('#image').attr('src', 'assets/picture/'+result.image);
+      }   
     },error: function(result) {
       console.log(result);
       notify('fas fa-times', 'Gagal', getErrorMsg(result.responseText), 'danger');

@@ -34,7 +34,7 @@
           </div>
           <div class="tab-pane fade show" id="tab2" role="tabpanel" >
             <div class="input-file input-file-image">
-              <img class="img-upload-preview" width="1000" src="http://placehold.it/1000x300" alt="preview" id="imageProduct">
+              <img class="img-upload-preview" width="1000" src="http://placehold.it/1000x300" alt="preview" id="image">
               <input type="file" class="form-control form-control-file" id="fileUpload" name="fileUpload" accept="image/*" required="">
               <label for="fileUpload" class="  label-input-file btn btn-success">
                 <span class="btn-label btn-info"><i class="fa fa-file-image"></i></span>Pilih Foto
