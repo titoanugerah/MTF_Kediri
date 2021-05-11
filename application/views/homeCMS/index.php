@@ -18,11 +18,11 @@
       <div class="row">
         <div class="card full-height  col-md-12">
           <div class="card-header">
-            <div class="card-title">Konten Beranda</div>
+            <div class="card-title">Editor Konten</div>
             <div class="d-flex flex-wrap justify-content-around pb-2 pt-4"></div>
           </div>
           <div class="card-body">
-            <div id="summernote">Hello Summernote</div>
+            <div id="summernote"></div>
             <button class="btn btn-success" onclick="updateContent()">Simpan</button>
           </div>
       </div>

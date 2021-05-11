@@ -12,6 +12,11 @@ $route['homeCMS'] = 'homeCMS';
 $route['api/homeCMS/read'] = 'homeCMS/read';
 $route['api/homeCMS/update'] = 'homeCMS/update';
 
+#TERMS CMS
+$route['termsCMS'] = 'termsCMS';
+$route['api/termsCMS/read'] = 'termsCMS/read';
+$route['api/termsCMS/update'] = 'termsCMS/update';
+$route['api/termsCMS/upload'] = 'termsCMS/upload';
 
 #ROLE
 $route['role'] = 'role';
