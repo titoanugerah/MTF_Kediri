@@ -7,6 +7,16 @@ $route['profile'] = 'profile';
 $route['login'] = 'auth/login';
 $route['logout'] = 'auth/logout';
 
+#HOME CMS
+$route['homeCMS'] = 'homeCMS';
+$route['api/role/read'] = 'role/read';
+$route['api/role/readDetail'] = 'role/readDetail';
+$route['api/role/recover'] = 'role/recover';
+$route['api/role/create'] = 'role/create';
+$route['api/role/delete'] = 'role/delete';
+$route['api/role/update'] = 'role/update';
+
+
 #ROLE
 $route['role'] = 'role';
 $route['api/role/read'] = 'role/read';
