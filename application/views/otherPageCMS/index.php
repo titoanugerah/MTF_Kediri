@@ -59,7 +59,7 @@
             <div class="row">
               <div class="form-group col-md-3 ">
                 <label class="">Nama</label>
-                <input type="text" id="name" class="form-control">
+                <input type="text" id="nameAttachment" class="form-control">
               </div>
               <div class="form-group col-md-4 ">
                 <label class="">Keterangan</label>

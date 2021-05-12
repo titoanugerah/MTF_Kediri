@@ -60,7 +60,7 @@ class OtherPageCms_model extends CI_Model
   {
     try
     {
-      $data['otherPage'] = $this->core_model->readSingleData('page', 'id', $id);
+      $data['page'] = $this->core_model->readSingleData('page', 'id', $id);
       $data['attachment'] = $this->core_model->readSomeData('attachment', 'attachmentCategoryId', 2, 'targetId', $id);
       return json_encode($data); 
     }

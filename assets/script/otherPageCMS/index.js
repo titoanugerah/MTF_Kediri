@@ -128,8 +128,8 @@ function createOtherPage(){
     type: "POST",
     dataType : "JSON",
     data: {
+      name : $('#name').val(),
       description : $('#summernote').summernote('code'),
-      name : $('#name').val()
     },
     url: "api/otherPageCMS/create",
     success: function(result) {
@@ -200,7 +200,7 @@ function uploadFileAttachment() {
         dataType : "JSON",
         data: {
             id : response.id,
-            name : $('#name').val(),
+            name : $('#nameAttachment').val(),
             remark : $('#remark').val()            
         },
         url: "api/otherPageCMS/updateAttachment",

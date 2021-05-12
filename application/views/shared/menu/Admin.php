@@ -55,6 +55,6 @@
 <li class="nav-item active" >
   <a href="<?php echo base_url('mtfMember'); ?>">
     <i class="fas fa-edit"></i>
-    <p>Member MTF</p>
+    <p>Member WIRA</p>
   </a>
 </li>
