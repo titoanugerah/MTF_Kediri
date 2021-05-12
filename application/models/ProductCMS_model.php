@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class TermsCms_model extends CI_Model
+class ProductCms_model extends CI_Model
 {
 
   function __construct()
@@ -15,7 +15,7 @@ class TermsCms_model extends CI_Model
     {
       if ($this->session->userdata('roleId')== $this->config->item('admin_role_id'))
       {
-        $data['viewName'] = 'termsCMS/index';
+        $data['viewName'] = 'productCMS/index';
         return $data;
       }
       else
@@ -29,13 +29,39 @@ class TermsCms_model extends CI_Model
     }
   }
 
+  public function create()
+  {
+    try
+    {
+      return json_encode($this->core_model->createData('product', $this->input->post()));
+    }
+    catch (Exception $ex)
+    {
+      notify("Gagal", "Terjadi kendala disaat akses halaman : ".$ex->getMessage(), "danger", "fa fa-times", null);
+    }
+    
+  }
+
   public function read()
   {
     try
     {
-      $data = $this->core_model->readSingleData('page', 'id', 2);
+      $data = $this->core_model->readAllData('product');
       return json_encode($data);
  
+    }
+    catch (Exception $ex)
+    {
+      notify("Gagal", "Terjadi kendala disaat memuat data konten : ".$ex->getMessage(), "danger", "fa fa-times", null);
+    }
+  }
+
+  public function readDetail($id)
+  {
+    try
+    {
+      $data = $this->core_model->readSingleData('product', 'id', $id);
+      return json_encode($data); 
     }
     catch (Exception $ex)
     {
@@ -47,9 +73,10 @@ class TermsCms_model extends CI_Model
   {
     try
     {
-      if ($this->session->userdata('roleId')== $this->config->item('admin_role_id'))
+      $input = $this->input->post();
+      if ($this->session->userdata('roleId')== $this->config->item('admin_role_id') && $input['id'] != 0)
       {
-        return json_encode($this->core_model->updateDataBatch('page',  'id', $this->input->post('id'), $this->input->post()));
+        return json_encode($this->core_model->updateDataBatch('product',  'id', $input['id'], $this->input->post()));
       }
     }
     catch (Exception $ex)
@@ -58,11 +85,11 @@ class TermsCms_model extends CI_Model
     }
   }
 
-  public function upload()
+  public function upload($id)
   {
     try
     {
-      $filename = 'terms';
+      $filename = 'product_'.$id;
       $config['upload_path'] = APPPATH.'../assets/picture/';
       $config['overwrite'] = TRUE;
   
@@ -77,7 +104,7 @@ class TermsCms_model extends CI_Model
         $upload['message'] = "File berhasil di upload";
         $upload['ext'] = $this->upload->data('file_ext');
         $upload['filename'] = $filename;
-        $this->core_model->UpdateData('page', 'id', 2, 'image', $filename.$upload['ext']);
+        $this->core_model->UpdateData('product', 'id', $id , 'image', $filename.$upload['ext']);
       }
       return json_encode($upload);
     } 
@@ -85,7 +112,11 @@ class TermsCms_model extends CI_Model
     {
       notify("Gagal", "Terjadi kendala disaat update data konten : ".$ex->getMessage(), "danger", "fa fa-times", null);
     }
+  }
 
+  public function delete()
+  {
+    return json_encode($this->core_model->forceDeleteData('product', 'id', $this->input->post('id')));
   }
 
 }

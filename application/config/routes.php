@@ -18,6 +18,15 @@ $route['api/termsCMS/read'] = 'termsCMS/read';
 $route['api/termsCMS/update'] = 'termsCMS/update';
 $route['api/termsCMS/upload'] = 'termsCMS/upload';
 
+#PRODUCT CMS
+$route['productCMS'] = 'productCMS';
+$route['api/productCMS/read'] = 'productCMS/read';
+$route['api/productCMS/readDetail/(:any)'] = 'productCMS/readDetail/$1';
+$route['api/productCMS/update'] = 'productCMS/update';
+$route['api/productCMS/create'] = 'productCMS/create';
+$route['api/productCMS/delete'] = 'productCMS/delete';
+$route['api/productCMS/upload/(:any)'] = 'productCMS/upload/$1';
+
 #CONTACT CMS
 $route['contactCMS'] = 'contactCMS';
 $route['api/contactCMS/read'] = 'contactCMS/read';
