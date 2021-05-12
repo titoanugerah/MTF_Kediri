@@ -53,13 +53,6 @@
 </li>
 
 <li class="nav-item active" >
-  <a href="<?php echo base_url('user'); ?>">
-    <i class="fas fa-users"></i>
-    <p>Pengguna</p>
-  </a>
-</li>
-
-<li class="nav-item active" >
   <a href="<?php echo base_url('mtfMember'); ?>">
     <i class="fas fa-edit"></i>
     <p>Member MTF</p>
