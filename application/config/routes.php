@@ -30,6 +30,18 @@ $route['api/productCMS/upload/(:any)'] = 'productCMS/upload/$1';
 $route['api/productCMS/uploadAttachment/(:any)'] = 'productCMS/uploadAttachment/$1';
 $route['api/productCMS/updateAttachment'] = 'productCMS/updateAttachment';
 
+#Other Page CMS
+$route['otherPageCMS'] = 'otherPageCMS';
+$route['api/otherPageCMS/read'] = 'otherPageCMS/read';
+$route['api/otherPageCMS/readDetail/(:any)'] = 'otherPageCMS/readDetail/$1';
+$route['api/otherPageCMS/update'] = 'otherPageCMS/update';
+$route['api/otherPageCMS/create'] = 'otherPageCMS/create';
+$route['api/otherPageCMS/delete'] = 'otherPageCMS/delete';
+$route['api/otherPageCMS/deleteAttachment'] = 'otherPageCMS/deleteAttachment';
+$route['api/otherPageCMS/upload/(:any)'] = 'otherPageCMS/upload/$1';
+$route['api/otherPageCMS/uploadAttachment/(:any)'] = 'otherPageCMS/uploadAttachment/$1';
+$route['api/otherPageCMS/updateAttachment'] = 'otherPageCMS/updateAttachment';
+
 #CONTACT CMS
 $route['contactCMS'] = 'contactCMS';
 $route['api/contactCMS/read'] = 'contactCMS/read';
