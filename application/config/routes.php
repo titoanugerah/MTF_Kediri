@@ -48,15 +48,6 @@ $route['api/contactCMS/read'] = 'contactCMS/read';
 $route['api/contactCMS/update'] = 'contactCMS/update';
 $route['api/contactCMS/upload'] = 'contactCMS/upload';
 
-#ROLE
-$route['role'] = 'role';
-$route['api/role/read'] = 'role/read';
-$route['api/role/readDetail'] = 'role/readDetail';
-$route['api/role/recover'] = 'role/recover';
-$route['api/role/create'] = 'role/create';
-$route['api/role/delete'] = 'role/delete';
-$route['api/role/update'] = 'role/update';
-
 $route['template'] = 'general/template';
 $route['404_override'] = 'errors';
 $route['translate_uri_dashes'] = FALSE;
