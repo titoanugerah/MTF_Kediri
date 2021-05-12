@@ -43,11 +43,25 @@ class ProductCMS extends CI_Controller
     echo $this->productCMS_model->upload($id);
   }
 
+  public function updateAttachment()
+  {
+    echo $this->productCMS_model->updateAttachment();
+  }
+
+  public function uploadAttachment($id)
+  {
+    echo $this->productCMS_model->uploadAttachment($id);
+  }
+
   public function delete()
   {
     echo $this->productCMS_model->delete();
   }
 
+  public function deleteAttachment()
+  {
+    echo $this->productCMS_model->deleteAttachment();
+  }
 }
 
  ?>

@@ -25,7 +25,10 @@ $route['api/productCMS/readDetail/(:any)'] = 'productCMS/readDetail/$1';
 $route['api/productCMS/update'] = 'productCMS/update';
 $route['api/productCMS/create'] = 'productCMS/create';
 $route['api/productCMS/delete'] = 'productCMS/delete';
+$route['api/productCMS/deleteAttachment'] = 'productCMS/deleteAttachment';
 $route['api/productCMS/upload/(:any)'] = 'productCMS/upload/$1';
+$route['api/productCMS/uploadAttachment/(:any)'] = 'productCMS/uploadAttachment/$1';
+$route['api/productCMS/updateAttachment'] = 'productCMS/updateAttachment';
 
 #CONTACT CMS
 $route['contactCMS'] = 'contactCMS';

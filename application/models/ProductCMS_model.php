@@ -60,7 +60,8 @@ class ProductCms_model extends CI_Model
   {
     try
     {
-      $data = $this->core_model->readSingleData('product', 'id', $id);
+      $data['product'] = $this->core_model->readSingleData('product', 'id', $id);
+      $data['attachment'] = $this->core_model->readSomeData('attachment', 'attachmentCategoryId', 1, 'targetId', $id);
       return json_encode($data); 
     }
     catch (Exception $ex)
@@ -77,6 +78,22 @@ class ProductCms_model extends CI_Model
       if ($this->session->userdata('roleId')== $this->config->item('admin_role_id') && $input['id'] != 0)
       {
         return json_encode($this->core_model->updateDataBatch('product',  'id', $input['id'], $this->input->post()));
+      }
+    }
+    catch (Exception $ex)
+    {
+      notify("Gagal", "Terjadi kendala disaat update data konten : ".$ex->getMessage(), "danger", "fa fa-times", null);
+    }
+  }
+
+  public function updateAttachment()
+  {
+    try
+    {
+      $input = $this->input->post();
+      if ($this->session->userdata('roleId')== $this->config->item('admin_role_id') && $input['id'] != 0)
+      {
+        return json_encode($this->core_model->updateDataBatch('attachment',  'id', $input['id'], $this->input->post()));
       }
     }
     catch (Exception $ex)
@@ -114,11 +131,45 @@ class ProductCms_model extends CI_Model
     }
   }
 
+  public function uploadAttachment($id)
+  {
+    try
+    {
+      $uploadData = $this->core_model->createData('attachment', array('attachmentCategoryId' => 1, 'targetId' => $id, 'isExist' => 1));
+      $filename = 'attachment_product_'.$id.'_'.$uploadData['id'];
+      $config['upload_path'] = APPPATH.'../assets/attachment/';
+      $config['overwrite'] = TRUE;  
+      $config['file_name']     =  str_replace(' ','_',$filename);
+      $config['allowed_types'] = 'pdf|xlsx|xls';
+      $this->load->library('upload', $config);
+      if (!$this->upload->do_upload('file')) {
+        $upload['status']= 'danger';
+        $upload['message']= "Mohon maaf terjadi error saat proses upload : ".$this->upload->display_errors();
+      } else {
+        $upload['status']= 'success';
+        $upload['message'] = "File berhasil di upload";
+        $upload['ext'] = $this->upload->data('file_ext');
+        $upload['filename'] = $filename;
+        $upload['id'] = $uploadData['id'];
+        $this->core_model->UpdateData('attachment', 'id', $uploadData['id'] , 'path', $filename.$upload['ext']);
+      }
+      return json_encode($upload);
+    } 
+    catch (Exception $ex)
+    {
+      notify("Gagal", "Terjadi kendala disaat update data konten : ".$ex->getMessage(), "danger", "fa fa-times", null);
+    }
+  }
+
   public function delete()
   {
     return json_encode($this->core_model->forceDeleteData('product', 'id', $this->input->post('id')));
   }
 
+  public function deleteAttachment()
+  {
+    return json_encode($this->core_model->forceDeleteData('attachment', 'id', $this->input->post('id')));
+  }
 }
 
 ?>

@@ -56,12 +56,43 @@
             </div>
           </div>
           <div class="tab-pane fade show" id="tab3" role="tabpanel" >
-            Lampiran
+            <div class="row">
+              <div class="form-group col-md-3 ">
+                <label class="">Nama</label>
+                <input type="text" id="name" class="form-control">
+              </div>
+              <div class="form-group col-md-4 ">
+                <label class="">Keterangan</label>
+                <input type="text" id="remark" class="form-control">
+              </div>
+              <div class="form-group col-md-5 ">
+                <label class="">Upload File</label>
+                <div class="file-field">
+                  <div class="btn btn-primary btn-sm float-left">
+                    <span>Choose file</span>
+                    <input type="file" id="fileUpload1">
+                  </div>
+                </div>
+                <button onclick="uploadFileAttachment()" class="btn btn-success " type="button">Upload</button>
+              </div>
+            </div>
+            <br><br>
+           <table id="attachment" class="display" style="width:100%">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Nama</th>
+                  <th>Keterangan</th>
+                  <th>Opsi</th>
+                </tr>
+              </thead>
+              <tbody id="attachmentList">
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-      </div>
-
+    </div>
    </div>
   </div>
 </div>
