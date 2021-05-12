@@ -7,7 +7,6 @@
 
 application/config/config.php
 application/config/database.php
-application/config/routes.php
 application/config/autoload.php
 
 assets/client_credentials.json

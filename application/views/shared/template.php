@@ -19,6 +19,8 @@
 		</script>
 		<link rel="stylesheet" href="<?php echo base_url('assets/template/AtlantisLite/'); ?>/assets/css/bootstrap.min.css">
 		<link rel="stylesheet" href="<?php echo base_url('assets/template/AtlantisLite/'); ?>/assets/css/atlantis.min.css">
+		<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+	
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
 	</head>
 
@@ -206,6 +208,7 @@
 
 	<!--   Core JS Files   -->
 	<script src="<?php echo base_url('assets/template/AtlantisLite/'); ?>/assets/js/core/jquery.3.2.1.min.js"></script>
+	<script src="<?php echo base_url('assets/template/AtlantisLite/'); ?>/assets/js/core/popper.min.js"></script>
 	<script src="<?php echo base_url('assets/template/AtlantisLite/'); ?>/assets/js/core/bootstrap.min.js"></script>
 	<!-- jQuery UI -->
 	<script src="<?php echo base_url('assets/template/AtlantisLite/'); ?>/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
@@ -215,6 +218,8 @@
 	<!-- Datatables -->
 	<script src="<?php echo base_url('assets/template/AtlantisLite/'); ?>/assets/js/plugin/datatables/datatables.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+	<script src="<?php echo base_url('assets/template/AtlantisLite/'); ?>/assets/js/plugin/summernote/summernote-bs4.min.js"></script>
+
 	<script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
 	<script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.flash.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>

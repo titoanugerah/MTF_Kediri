@@ -6,62 +6,55 @@
 </li>
 
 <li class="nav-item submenu active" >
-  <a data-toggle="collapse" href="#masterSetting" aria-expanded="false">
-    <i class="fas fa-address-book"></i>
-    <p>Master Data</p>
+  <a data-toggle="collapse" href="#cms" aria-expanded="false">
+    <i class="fas fa-edit"></i>
+    <p>Kelola Konten</p>
     <span class="caret"></span>
   </a>
 
   
-  <div id="masterSetting" class="collapse">
+  <div id="cms" class="collapse">
     <ul class="nav nav-collapse">
-      <a href="<?php echo base_url('role'); ?>">
+      <a href="<?php echo base_url('homeCMS'); ?>">
         <i class="fas fa-user-tag"></i>
-        <p>Hak Akses</p>
+        <p>Beranda</p>
       </a>
 
-      <a href="<?php echo base_url('bank'); ?>">
+      <a href="<?php echo base_url('termsCMS'); ?>">
         <i class="fas fa-building"></i>
-        <p>Bank</p>
+        <p>Syarat & Ketentuan</p>
       </a>
 
-      <a href="<?php echo base_url('area'); ?>">
+      <a href="<?php echo base_url('productCMS'); ?>">
         <i class="fas fa-map-marked"></i>
-        <p>Area</p>
+        <p>Produk</p>
       </a>
 
-      <a href="<?php echo base_url('district'); ?>">
+      <a href="<?php echo base_url('contactCMS'); ?>">
         <i class="fas fa-building"></i>
-        <p>Distrik</p>
+        <p>Kontak</p>
       </a>
 
-      <a href="<?php echo base_url('familyStatus'); ?>">
+      <a href="<?php echo base_url('otherPageCMS'); ?>">
         <i class="fas fa-users"></i>
-        <p>Status Keluarga</p>
+        <p>Halaman Lainnya</p>
       </a>
 
-      <a href="<?php echo base_url('position'); ?>">
-        <i class="fas fa-edit"></i>
-        <p>Posisi</p>
-      </a>
-
-      <a href="<?php echo base_url('customer'); ?>">
-        <i class="fas fa-chalkboard-teacher"></i>
-        <p>Customer</p>
-      </a>
-
-      <a href="<?php echo base_url('employee'); ?>">
-        <i class="fas fa-user"></i>
-        <p>Pekerja</p>
-      </a>
     </ul>
   </div>
 
 </li>
 
 <li class="nav-item active" >
-  <a href="<?php echo base_url('payrollPeriod'); ?>">
-    <i class="fas fa-money-bill-wave"></i>
-    <p>Penggajian</p>
+  <a href="<?php echo base_url('referral'); ?>">
+    <i class="fas fa-edit"></i>
+    <p>Mapping Referral</p>
+  </a>
+</li>
+
+<li class="nav-item active" >
+  <a href="<?php echo base_url('mtfMember'); ?>">
+    <i class="fas fa-edit"></i>
+    <p>Member MTF</p>
   </a>
 </li>
