@@ -1,75 +1,10 @@
 $(document).ready(function() {
-    $('#summernote').summernote({
-        height: 300, 
-    });
 
-    getContent();
+    $('#referralTable').DataTable();
+    getReferral();
 });
 
-function getContent(){
-  $.ajax({
-    type: "POST",
-    dataType : "JSON",
-    url: "api/contactCMS/read",
-    success: function(result) {
-      $('#name').val(result.name);
-      $('#email').val(result.email);
-      $('#whatsapp').val(result.whatsapp);
-      $('#address').val(result.address);
-      if(result.image!=null){
-        $('#image').attr('src', 'assets/picture/'+result.image);
-      }
-      
-//        $('#summernote').summernote('code', result.description);
-    },error: function(result) {
-      console.log(result);
-      notify('fas fa-times', 'Gagal', getErrorMsg(result.responseText), 'danger');
-    }
-  });
-    
-}
 
-function updateContent(){
-    $.ajax({
-        type: "POST",
-        dataType : "JSON",
-        data: {
-            name : $('#name').val(),
-            email : $('#email').val(),
-            whatsapp : $('#whatsapp').val(),
-            address : $('#address').val(),
-        },
-        url: "api/contactCMS/update",
-        success: function(result) {
-            notify('fas fa-check', 'Sukses', 'Perubahan anda berhasil disimpan', 'success');
-            getContent();
-        },error: function(result) {
-          console.log(result);
-          notify('fas fa-times', 'Gagal', getErrorMsg(result.responseText), 'danger');
-        }
-      });
-}
-
-function upload() {
-  var fd = new FormData();
-  var files = $('#fileUpload')[0].files[0];
-  fd.append('file',files);
-  $.ajax({
-    url: 'api/contactCMS/upload',
-    type: 'post',
-    data: fd,
-    contentType: false,
-    processData: false,
-    success: function(response){
-      notify('fas fa-check', 'Sukses', 'Gambar berhasil disimpan', 'success');
-    },
-    error: function(result){
-      console.log('error', result);
-      notify('fas fa-times', 'Gagal', getErrorMsg(result.responseText), 'danger');
-
-    }
-  });
-}
 
 function getErrorMsg(result){
     var responseInArray = result.split('\n');

@@ -6,7 +6,10 @@
       </div>
       <div class="ml-md-auto py-2 py-md-0">
         <a href="#" class="btn btn-white btn-border btn-round mr-2" hidden>Manage</a>
-        <!-- <button type="button" class="btn btn-white btn-border btn-round mr-2" onclick="addNewFamilyStatusForm()">Tambah Status Keluarga Baru</button> -->
+        <select class="form-control select2modal" id="period" style="width:150px;">
+
+        </select>
+
       </div>
     </div>
   </div>
@@ -17,8 +20,22 @@
     <div class="col-md-12">
       <div class="row">
         <div class="card full-height  col-md-12">
-          <div class="card-body">
-            
+          <div class="card-body">          
+          <table id="referralTable" class="display" style="width:100%">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Nama Cabang</th>
+                  <th>Kelas</th>
+                  <th>Prospect</th>
+                  <th>Go Live</th>
+                  <th>Opsi</th>
+                </tr>
+              </thead>
+              <tbody id="referralData">
+              </tbody>
+            </table>
+
           </div>
         </div>
        </div>
