@@ -185,22 +185,24 @@ function upload() {
 function uploadFileAttachment() {
   var fd = new FormData();
   var files = $('#fileUpload1')[0].files[0];
+  var attachmentId = 0;
   fd.append('file',files);
   $.ajax({
     url: 'api/productCMS/uploadAttachment/'+$('#productId').val(),
+    dataType : "JSON",
     type: 'post',
     data: fd,
     contentType: false,
     processData: false,
     success: function(response){
       notify('fas fa-check', 'Sukses', 'Gambar berhasil disimpan', 'success');
-
+      attachmentId = response.id;
       $.ajax({
         type: "POST",
         dataType : "JSON",
         data: {
-            id : response.id,
-            name : $('#name').val(),
+            id : attachmentId,
+            name : $('#nameAttachment').val(),
             remark : $('#remark').val()            
         },
         url: "api/productCMS/updateAttachment",

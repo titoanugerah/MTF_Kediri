@@ -189,6 +189,7 @@ function uploadFileAttachment() {
   $.ajax({
     url: 'api/otherPageCMS/uploadAttachment/'+$('#otherPageId').val(),
     type: 'post',
+    dataType : "JSON",
     data: fd,
     contentType: false,
     processData: false,

@@ -95,6 +95,7 @@ class ProductCms_model extends CI_Model
       {
         return json_encode($this->core_model->updateDataBatch('attachment',  'id', $input['id'], $this->input->post()));
       }
+      return json_encode($input);
     }
     catch (Exception $ex)
     {

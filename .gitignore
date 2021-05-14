@@ -10,6 +10,10 @@ application/config/database.php
 application/config/autoload.php
 
 assets/client_credentials.json
+assets/attachment
+assets/picture
+!assets/picture/no.jpg
+!assets/picture/user.jpg
 user_guide_src/build/*
 user_guide_src/cilexer/build/*
 user_guide_src/cilexer/dist/*
