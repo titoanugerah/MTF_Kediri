@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$route['default_controller'] = 'dashboard';
+$route['default_controller'] = 'home';
 $route['dashboard'] = 'dashboard';
 $route['profile'] = 'profile';
 $route['login'] = 'auth/login';
@@ -53,6 +53,9 @@ $route['contactCMS'] = 'contactCMS';
 $route['api/contactCMS/read'] = 'contactCMS/read';
 $route['api/contactCMS/update'] = 'contactCMS/update';
 $route['api/contactCMS/upload'] = 'contactCMS/upload';
+
+#Home
+$route['home'] = 'home';
 
 $route['template'] = 'general/template';
 $route['404_override'] = 'errors';
