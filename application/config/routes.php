@@ -54,8 +54,11 @@ $route['api/contactCMS/read'] = 'contactCMS/read';
 $route['api/contactCMS/update'] = 'contactCMS/update';
 $route['api/contactCMS/upload'] = 'contactCMS/upload';
 
-#Home
+#HOME
 $route['home'] = 'home';
+
+#PRODUCT
+$route['product'] = 'product';
 
 $route['template'] = 'general/template';
 $route['404_override'] = 'errors';
