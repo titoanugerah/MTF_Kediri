@@ -13,7 +13,19 @@ class Home_model extends CI_Model
   {
     try
     {
+      if (!$this->session->userdata('isLogin'))
+      {
+        require_once 'vendor/autoload.php';
+        $client = new Google_Client();
+        $client->setAuthConfig('assets/client_credentials.json');
+        $client->addScope("email");
+        $client->addScope("profile");
+        $this->session->set_flashdata('link', $client->createAuthUrl());  
+      }
+
         $data['contact'] = $this->core_model->readSingleData('contact','id', 1);
+        $data['content'] = $this->core_model->readSingleData('page','id', 1);
+        $data['product'] = $this->core_model->readAllData('product');
         $data['viewName'] = 'home/index';
         return $data;
     }
