@@ -3,7 +3,8 @@
 
         <div class="row justify-content-between">
           <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
-            <img src="<?php echo base_url('./assets/template/frontend/'); ?>assets/img/about-img.svg" class="img-fluid" alt="" data-aos="zoom-in">
+            <!-- <img src="<?php //echo base_url('./assets/template/frontend/'); ?>assets/img/about-img.svg" class="img-fluid" alt="" data-aos="zoom-in"> -->
+            <img src="<?php echo base_url('./assets/picture/home.png'); ?>" class="img-fluid" alt="" data-aos="zoom-in">
           </div>
           <div class="col-lg-6 pt-5 pt-lg-0">
             <h3 data-aos="fade-up"><?php echo $content->name; ?></h3>
@@ -27,9 +28,9 @@
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-12">
-            <ul id="portfolio-flters">
+            <!-- <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">Semua Produk</li>
-            </ul>
+            </ul> -->
           </div>
         </div>
 
