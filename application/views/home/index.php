@@ -1,4 +1,4 @@
-<section id="about" class="about">
+<section id="home" class="about">
       <div class="container">
 
         <div class="row justify-content-between">
@@ -18,7 +18,7 @@
     </section><!-- End About Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <section id="product" class="portfolio">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
@@ -56,6 +56,26 @@
 
       </div>
     </section><!-- End Portfolio Section -->
+
+
+    <section id="terms" class="about">
+      <div class="container">
+
+        <div class="row justify-content-between">
+          <div class="col-lg-5 d-flex align-items-center justify-content-center about-img">
+            <!-- <img src="<?php //echo base_url('./assets/template/frontend/'); ?>assets/img/about-img.svg" class="img-fluid" alt="" data-aos="zoom-in"> -->
+            <!-- <img src="<?php //echo base_url('./assets/picture/home.png'); ?>" class="img-fluid" alt="" data-aos="zoom-in"> -->
+          </div>
+          <div class="col-lg-6 pt-5 pt-lg-0">
+            <h3 data-aos="fade-up"><?php echo $terms->name; ?></h3>
+            <p data-aos="fade-up" data-aos-delay="100">
+            <?php echo $terms->description; ?>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
 
 
     <!-- ======= Contact Us Section ======= -->

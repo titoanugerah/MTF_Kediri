@@ -49,9 +49,9 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="<?php echo base_url(); ?>">Beranda</a></li>
-          <li><a href="#portfolio">Produk</a></li>
-          <li><a href="<?php echo base_url('terms'); ?>">Syarat</a></li>
+          <li class="active"><a href="#home">Beranda</a></li>
+          <li><a href="#product">Produk</a></li>
+          <li><a href="#terms">Syarat</a></li>
           <li><a href="<?php echo base_url('referral'); ?>">Referral</a></li>
           <li class="drop-down"><a href="#">Lain Lain</a>
             <ul>
