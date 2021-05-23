@@ -32,6 +32,28 @@ function getErrorMsg(result){
     return error.toString();  
   }
 
+  function uploadAttachment(){
+    var fd = new FormData();
+    var files = $('#fileUpload')[0].files[0];
+    fd.append('file',files);
+    $.ajax({
+      url: 'api/referral/picture/'+($('#date').val()), //.replace('-','/'),
+      type: 'post',
+      data: fd,
+      dataType : "JSON",
+      contentType: false,
+      processData: false,
+      success: function(response){
+        console.log(response);        
+        notify('fas fa-check', 'Sukses', response.message , response.status);
+      },
+      error: function(result){
+        console.log('error', result);
+        notify('fas fa-times', 'Gagal', getErrorMsg(result.responseText), 'danger');  
+      }
+    });
+  }
+
   function upload() {
     var fd = new FormData();
     var files = $('#fileUpload1')[0].files[0];
@@ -40,10 +62,12 @@ function getErrorMsg(result){
       url: 'api/referral/upload/'+($('#date').val()), //.replace('-','/'),
       type: 'post',
       data: fd,
+      dataType : "JSON",
       contentType: false,
       processData: false,
       success: function(response){
-        console.log(response);
+        $('#uploadExcelForm').modal('hide');
+        uploadAttachment();
         notify('fas fa-check', 'Sukses', response.message , response.status);
       },
       error: function(result){

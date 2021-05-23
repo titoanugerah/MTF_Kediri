@@ -66,6 +66,15 @@
               </div>
             </div>
           </div>
+          <div class="form-group">
+            <label class="">Foto</label>
+            <div class="file-field">
+              <div class="btn btn-primary btn-sm float-left">
+                <span>Choose file</span>
+                <input type="file" id="fileUpload">
+              </div>
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" onclick="upload()">Simpan</button>

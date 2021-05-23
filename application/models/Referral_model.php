@@ -59,6 +59,35 @@ class Referral_model extends CI_Model
     }
   }
 
+  public function picture($id)
+  {
+    try
+    {
+      $filename = 'referral_image_'.$this->core_model->readSingleData('referral', 'month', $id);
+      $config['upload_path'] = APPPATH.'../assets/picture/';
+      $config['overwrite'] = TRUE;
+  
+      $config['file_name']     =  str_replace(' ','_',$filename);
+      $config['allowed_types'] = 'jpg|png|bmp|jpeg';
+      $this->load->library('upload', $config);
+      if (!$this->upload->do_upload('file')) {
+        $upload['status']= 'danger';
+        $upload['message']= "Mohon maaf terjadi error saat proses upload : ".$this->upload->display_errors();
+      } else {
+        $upload['status']= 'success';
+        $upload['message'] = "File berhasil di upload ";
+        $upload['ext'] = $this->upload->data('file_ext');
+        $upload['filename'] = $filename;
+      }
+      return json_encode($upload);
+    } 
+    catch (Exception $ex)
+    {
+      notify("Gagal", "Terjadi kendala disaat update data konten : ".$ex->getMessage(), "danger", "fa fa-times", null);
+    }
+
+  }
+
   public function upload($id)
   {
     try

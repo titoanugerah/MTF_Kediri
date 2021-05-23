@@ -33,6 +33,11 @@ class Referral extends CI_Controller
     echo $this->referral_model->upload($id);
   }
 
+  public function picture($id)
+  {
+    echo $this->referral_model->picture($id);
+  }
+
 }
 
  ?>
