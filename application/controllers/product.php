@@ -16,6 +16,11 @@ class Product extends CI_Controller
    $this->load->view('shared/frontEnd', $this->product_model->content());
   }
 
+  public function detail($id){
+    $this->load->view('shared/frontEnd', $this->product_model->detail($id));
+   }
+ 
+
 }
 
  ?>

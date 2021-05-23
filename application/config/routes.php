@@ -59,6 +59,7 @@ $route['home'] = 'home';
 
 #PRODUCT
 $route['product'] = 'product';
+$route['product/(:any)'] = 'product/detail/$1';
 
 $route['template'] = 'general/template';
 $route['404_override'] = 'errors';
