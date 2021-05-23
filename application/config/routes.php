@@ -46,7 +46,7 @@ $route['api/otherPageCMS/updateAttachment'] = 'otherPageCMS/updateAttachment';
 $route['referral'] = 'referral';
 $route['api/referral/read'] = 'referral/read';
 $route['api/referral/update'] = 'referral/update';
-$route['api/referral/upload'] = 'referral/upload';
+$route['api/referral/upload/(:any)'] = 'referral/upload/$1';
 
 #CONTACT CMS
 $route['contactCMS'] = 'contactCMS';

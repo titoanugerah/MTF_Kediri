@@ -28,9 +28,9 @@ class Referral extends CI_Controller
     echo $this->referral_model->update();
   }
 
-  public function upload()
+  public function upload($id)
   {
-    echo $this->referral_model->upload();
+    echo $this->referral_model->upload($id);
   }
 
 }

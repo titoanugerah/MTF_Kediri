@@ -7,6 +7,7 @@ class Referral_model extends CI_Model
   function __construct()
   {
     parent::__construct();
+    $this->load->library('Excel');
   }
 
   public function content()
@@ -58,26 +59,27 @@ class Referral_model extends CI_Model
     }
   }
 
-  public function upload()
+  public function upload($id)
   {
     try
     {
-      $filename = 'contact';
-      $config['upload_path'] = APPPATH.'../assets/picture/';
+      $filename = 'referral';
+      $config['upload_path'] = APPPATH.'../assets/attachment/';
       $config['overwrite'] = TRUE;
   
       $config['file_name']     =  str_replace(' ','_',$filename);
-      $config['allowed_types'] = 'jpg|png|jpeg';
+      $config['allowed_types'] = 'xls|xlsx';
       $this->load->library('upload', $config);
       if (!$this->upload->do_upload('file')) {
         $upload['status']= 'danger';
         $upload['message']= "Mohon maaf terjadi error saat proses upload : ".$this->upload->display_errors();
       } else {
         $upload['status']= 'success';
-        $upload['message'] = "File berhasil di upload";
+        $upload['message'] = "File berhasil di upload ".$this->extractExcel($id);
         $upload['ext'] = $this->upload->data('file_ext');
         $upload['filename'] = $filename;
-        $this->core_model->UpdateData('contact', 'id', 1, 'image', $filename.$upload['ext']);
+//       $this->extractExcel($id);
+       // $this->core_model->UpdateData('contact', 'id', 1, 'image', $filename.$upload['ext']);
       }
       return json_encode($upload);
     } 
@@ -86,6 +88,53 @@ class Referral_model extends CI_Model
       notify("Gagal", "Terjadi kendala disaat update data konten : ".$ex->getMessage(), "danger", "fa fa-times", null);
     }
 
+  }
+
+  public function extractExcel($month)
+  {
+    $id = ($this->core_model->createOrUpdate('referral', 'month', array('month' => $month)))->id;
+
+    $excelReader = PHPExcel_IOFactory::createReader('Excel2007');
+    $excelReader->setReadDataOnly(true);
+    $excel = $excelReader->load(APPPATH.'../assets/attachment/referral.xlsx');
+    $sheet = $excel->getSheetByName('MTF YTD KEDIRI');
+    
+    $highestRow = $sheet->getHighestRow(); 
+    $highestColumn = $sheet->getHighestColumn();
+    for ($i = 8; $i <= $highestRow; $i++){ 
+      $record;
+      $branch;
+      $branch['code'] = $sheet->getCell('J'.$i)->getValue();
+      if($branch['code']==null){
+        break;
+      }
+      $branch['name'] = $sheet->getCell('K'.$i)->getValue();
+      $class['name'] = $sheet->getCell('L'.$i)->getValue();
+      $referralDetail['prospectUnit'] = ($sheet->getCell('M'.$i)->getValue());
+      $referralDetail['prospectAmount'] = ($sheet->getCell('N'.$i)->getValue());
+      $referralDetail['goLiveUnit'] = ($sheet->getCell('O'.$i)->getValue());
+      $referralDetail['goLiveAmount'] = ($sheet->getCell('P'.$i)->getValue());
+      $newClass = $this->core_model->createOrUpdate('class', 'name', $class);
+      $branch['classId'] = $newClass->id;
+      $newBranch = $this->core_model->createOrUpdate('branch', 'code', $branch);
+      $referralDetail['referralId'] = $id;
+      $referralDetail['branchCode'] = $sheet->getCell('J'.$i)->getValue();  
+      $newReferralDetail = $this->core_model->createOrUpdate2('referralDetail', 'referralId', 'branchCode', $referralDetail);
+    }
+    $this->core_model->updateData('referralDetail', 'prospectUnit', null, 'prospectUnit', 0);      
+    $this->core_model->updateData('referralDetail', 'prospectAmount', null, 'prospectAmount', 0);      
+    $this->core_model->updateData('referralDetail', 'goLiveUnit', null, 'goLiveUnit', 0);      
+    $this->core_model->updateData('referralDetail', 'goLiveAmount', null, 'goLiveAmount', 0);      
+    return true;      
+  }
+
+  public function checkIfNull($value)
+  {
+    if($value == "" or $value=" " or $value == null)  {
+      return 12;
+    } else {
+      return $value;
+    }
   }
 
 }

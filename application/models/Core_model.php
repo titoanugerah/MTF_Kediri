@@ -140,9 +140,44 @@ class Core_model extends CI_Model
     return $result;
   }
 
+  public function createOrUpdate($table, $param, $data)
+  {
+    if($this->getNumRows($table, $param, $data[$param])>0)
+    {
+      $this->updateDataBatch($table, $param, $data[$param], $data);
+    }
+    else
+    {
+      $this->createData($table, $data);
+    }
+    return $this->readSingleData($table, $param, $data[$param]);
+  }
+
+
+  public function createOrUpdate2($table, $param1, $param2, $data)
+  {
+    $currentData = ($this->db->query('select * from '.$table.' where '.$param1.'='.$data[$param1].' and '.$param2.'='.$data[$param2]))->row();
+    if($currentData!=null)
+    {
+      $this->updateDataBatch($table, 'id', $currentData->id, $data);
+    }
+    else
+    {
+      $this->createData($table, $data);
+    }
+    return $currentData = ($this->db->query('select * from '.$table.' where '.$param1.'="'.$data[$param1].'" and '.$param2.'="'.$data[$param2].'"'))->row();
+  }
+
+
   public function getNumRows($table, $whereVar, $whereVal )
   {
     $data = $this->db->get_where($table, $where = array($whereVar => $whereVal ));
+    return $data->num_rows();
+  }
+
+  public function getNumRows2($table, $whereVar1, $whereVal1, $whereVar2, $whereVal2 )
+  {
+    $data = $this->db->get_where($table, $where = array($whereVar1 => $whereVal1,$whereVar2 => $whereVal2 ));
     return $data->num_rows();
   }
 
