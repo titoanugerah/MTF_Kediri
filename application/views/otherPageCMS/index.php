@@ -6,14 +6,26 @@
       </div>
       <div class="ml-md-auto py-2 py-md-0">
         <a href="#" class="btn btn-white btn-border btn-round mr-2" hidden>Manage</a>
-        <div class="form-group">
-          <select class="form-control select2modal" id="otherPageId" style="width:150px;">
+        <div class="row">
+          <div class="form-group row col-md-5">
+            <p class="text-white"> Kategori</p>
+            <select class="form-control select2modal" id="pageCategoryId" style="width:150px;">
+            </select>
+          </div>
+          <div class="form-group row  col-md-5">
+            <p class="text-white"> Judul</p>
+            <select class="form-control select2modal" id="otherPageId" style="width:150px;">
+            </select>
+          </div>
 
-          </select>
-
-          <button id="btnDelete" class="btn btn-danger btn-sm" onclick="deleteOtherPage()"><i class="fas fa-trash"></i> Hapus</button>
-          <button id="btnAdd" class="btn btn-success btn-sm" onclick="createOtherPage()"><i class="fas fa-plus"></i> Tambah</button>
+          <div class="form-group">
+          <br>
+          <br>
+            <button id="btnDelete" class="btn btn-danger btn-sm" onclick="deleteOtherPage()"><i class="fas fa-trash"></i> Hapus</button>
+            <button id="btnAdd" class="btn btn-success btn-sm" onclick="createOtherPage()"><i class="fas fa-plus"></i> Tambah</button>
+          </div>
         </div>
+
         <!-- <button type="button" class="btn btn-white btn-border btn-round mr-2" onclick="addNewFamilyStatusForm()">Tambah Status Keluarga Baru</button> -->
       </div>
     </div>

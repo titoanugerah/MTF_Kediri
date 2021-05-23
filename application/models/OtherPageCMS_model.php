@@ -46,7 +46,8 @@ class OtherPageCms_model extends CI_Model
   {
     try
     {
-      $data = $this->core_model->readAllData('page');
+      $data['otherPage'] = ($this->db->query('select * from page where id>2'))->result();
+      $data['category'] = ($this->db->query('select * from pageCategory where id>1'))->result();
       return json_encode($data);
  
     }

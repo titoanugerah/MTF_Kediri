@@ -32,6 +32,7 @@ function getDetail(){
       var html = null;
       $('#summernote').summernote('code', result.page.description);
       $('#name').val(result.page.name);
+      $('#pageCategoryId').val(result.page.pageCategoryId).change();
       if(result.page.image!=null){
         $('#image').attr('src', 'assets/picture/'+result.page.image);
       }else{
@@ -86,12 +87,21 @@ function getOtherPage(){
     success: function(result) {
       console.log(result);
       var html = '<option value="0"> Baru </option>';
-      result.forEach(otherPage => {
+      var html1 = '<option value=0> Pilih Kategori </option> ';
+      result.otherPage.forEach(otherPage => {
         console.log(otherPage);
         html = html +
         '<option value="'+otherPage.id+'"> '+uppercase(otherPage.name)+' </option>';
       });
+
+      result.category.forEach(category => {
+        console.log(category);
+        html1 = html1 +
+        '<option value="'+category.id+'"> '+uppercase(category.name)+' </option>';
+      });
+
       $('#otherPageId').html(html);
+      $('#pageCategoryId').html(html1);
     },error: function(result) {
       console.log(result);
       notify('fas fa-times', 'Gagal', getErrorMsg(result.responseText), 'danger');
@@ -111,7 +121,8 @@ function updateContent(){
     data: {
         id : $('#otherPageId').val(),
         description : $('#summernote').summernote('code'),
-        name : $('#name').val()
+        name : $('#name').val(),
+        pageCategoryId : $('#pageCategoryId').val()
     },
     url: "api/otherPageCMS/update",
     success: function(result) {
@@ -129,7 +140,8 @@ function createOtherPage(){
     dataType : "JSON",
     data: {
       name : $('#name').val(),
-      description : $('#summernote').summernote('code'),
+      description : $('#summernote').summernote('code'),      
+      pageCategoryId : $('#pageCategoryId').val()      
     },
     url: "api/otherPageCMS/create",
     success: function(result) {
