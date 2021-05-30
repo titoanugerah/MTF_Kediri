@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class ContactCMS extends CI_Controller
+class ContactCms extends CI_Controller
 {
 
   function __construct()
   {
     parent::__construct();
     $this->load->model('core_model');
-    $this->load->model('contactCMS_model');
+    $this->load->model('contactCms_model');
     error_reporting($this->config->item('error_reporting'));
   }
 
