@@ -86,7 +86,7 @@
 
   <main id="main">
 
-    <?php echo $viewName;//$this->load->view($viewName); ?>
+    <?php $this->load->view($viewName); ?>
 
   </main>
 
