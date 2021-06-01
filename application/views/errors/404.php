@@ -24,7 +24,7 @@
 			<li class="layer" data-depth="0.40"><img src="<?php echo base_url('./assets/template/404/'); ?>images/text-01.png"></li>
 			<li class="layer" data-depth="0.10"><img src="<?php echo base_url('./assets/template/404/'); ?>images/monster-eyes-01.png"></li>
 		</ul>
-		<h1>Halaman yang anda masukan tidak tersedia atau dalam sedang tahap pengembangan</h1>
+		<h1><?php echo $this->config->item('site_full_name') ?> sedang dalam tahap perbaikan</h1>
     <button type="button" class="btn btn-purple" onclick="back()"> Kembali </button>
 	</div>
 
