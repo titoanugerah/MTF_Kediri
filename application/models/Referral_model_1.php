@@ -166,33 +166,6 @@ class Referral_model extends CI_Model
     }
   }
 
-  public function readDetail($id)
-  {
-    try
-    {
-      $data = $this->core_model->readSomeData('view_referralDetail', 'referralId', $id);
-      return json_encode($data); 
-    }
-    catch (Exception $ex)
-    {
-      notify("Gagal", "Terjadi kendala disaat memuat data konten : ".$ex->getMessage(), "danger", "fa fa-times", null);
-    }
-  }
-
-  public function readReferral()
-  {
-    try
-    {
-      $data = $this->core_model->readAllData('referral');
-      return json_encode($data);
- 
-    }
-    catch (Exception $ex)
-    {
-      notify("Gagal", "Terjadi kendala disaat memuat data konten : ".$ex->getMessage(), "danger", "fa fa-times", null);
-    }
-  }
-
 }
 
 ?>

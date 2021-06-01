@@ -6,8 +6,7 @@
       </div>
       <div class="ml-md-auto py-2 py-md-0 row">
         <button type="button" data-toggle="modal" data-target="#uploadExcelForm" class="btn btn-white btn-border btn-round mr-2" >Upload Excel</button>
-        <select class="form-control select2modal" id="referralId" style="width:150px;">
-
+        <select class="form-control select2modal" id="period" style="width:150px;">
         </select>
       </div>
     </div>
@@ -25,6 +24,7 @@
                 <tr>
                   <th>No</th>
                   <th>Nama Cabang</th>
+                  <th>Kelas</th>
                   <th>Prospect</th>
                   <th>Go Live</th>
                   <th>Opsi</th>
@@ -39,6 +39,8 @@
       </div>
      </div>
    </div>
+  </div>
+</div>
 
 <div class="modal fade" id="uploadExcelForm" role="dialog">
   <div class="modal-dialog">

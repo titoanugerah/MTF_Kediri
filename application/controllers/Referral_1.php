@@ -38,16 +38,6 @@ class Referral extends CI_Controller
     echo $this->referral_model->picture($id);
   }
 
-  public function readReferral()
-  {
-    echo $this->referral_model->readReferral();
-  }
-
-  public function readDetail($id)
-  {
-    echo $this->referral_model->readDetail($id);
-  }
-
 }
 
  ?>
