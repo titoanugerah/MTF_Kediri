@@ -3,7 +3,7 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <head>
 	<meta charset="utf-8">
-	<title> Error </title>
+	<title> Maintenance Mode </title>
   <link rel="icon" type="image/png" href="<?php echo base_url('./assets/image/undip-original.png'); ?>">
   <meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
