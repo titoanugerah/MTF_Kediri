@@ -12,6 +12,15 @@ $('#productId').on('change', function(){
   getDetail();
 });
 
+function cobaCopy(){
+  var text = "Example text to appear on clipboard";
+  navigator.clipboard.writeText(text).then(function() {
+    console.log('Async: Copying to clipboard was successful!');
+  }, function(err) {
+    console.error('Async: Could not copy text: ', err);
+  });
+}
+
 function getDetail(){
   var id = $('#productId').val();
   if(id==0)
@@ -41,12 +50,13 @@ function getDetail(){
       result.attachment.forEach(attachment => {
         var btns1 ='<button class="btn btn-danger" onclick="deleteAttachment('+attachment.id+')">Hapus</button>';
         var btns2 ='<button class="btn btn-success" onclick="download('+attachment.id+')">Download</button>';
+        var btns3 ='<button class="btn btn-success" onclick="cobaCopy()">Copy</button>';
         html =
         '<tr>' +
         '<td>'+no+'</td>' +
         '<td>'+attachment.name+'</td>' +
         '<td>'+attachment.remark+'</td>' +
-        '<td> '+btns1 + '&nbsp;'+ btns2+'</td>' +
+        '<td> '+btns1 + '&nbsp;'+ btns2+'&nbsp;'+ btns3+'</td>' +
         '</tr>' + html;    
         no++;
       });
