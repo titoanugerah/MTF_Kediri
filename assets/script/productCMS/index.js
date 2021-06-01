@@ -12,9 +12,8 @@ $('#productId').on('change', function(){
   getDetail();
 });
 
-function cobaCopy(){
-  var text = "Example text to appear on clipboard";
-  navigator.clipboard.writeText(text).then(function() {
+function copyPath(path){
+  navigator.clipboard.writeText(path).then(function() {
     console.log('Async: Copying to clipboard was successful!');
   }, function(err) {
     console.error('Async: Could not copy text: ', err);
@@ -46,11 +45,10 @@ function getDetail(){
       }else{
         $('#image').attr('src', 'http://placehold.it/1000x300');
       }
-      console.log(result.attachment);
       result.attachment.forEach(attachment => {
         var btns1 ='<button class="btn btn-danger" onclick="deleteAttachment('+attachment.id+')">Hapus</button>';
         var btns2 ='<button class="btn btn-success" onclick="download('+attachment.id+')">Download</button>';
-        var btns3 ='<button class="btn btn-success" onclick="cobaCopy()">Copy</button>';
+        var btns3 ='<button class="btn btn-info" onclick=copyPath("'+attachment.path+'")>Copy</button>';
         html =
         '<tr>' +
         '<td>'+no+'</td>' +
@@ -94,10 +92,8 @@ function getProduct(){
     dataType : "JSON",
     url: "api/productCMS/read",
     success: function(result) {
-      console.log(result);
       var html = '<option value="0"> Baru </option>';
       result.forEach(product => {
-        console.log(product);
         html = html +
         '<option value="'+product.id+'"> '+uppercase(product.name)+' </option>';
       });
