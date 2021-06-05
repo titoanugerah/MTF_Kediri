@@ -1,3 +1,27 @@
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+
+        <?php $firstPage = 1; foreach($promo as $promo) : ?>
+
+        <div class="carousel-item <?php if($firstPage==1){echo "active"; $firstPage=0; }?>">
+          <a href="<?php echo base_url('page/'.$promo->id); ?>">
+            <img class="d-block w-100" src="<?php echo base_url('./assets/picture/'.$promo->image); ?>">
+          </a>
+        </div>
+
+        <?php endforeach; ?>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+
 <section id="home" class="about">
       <div class="container">
 

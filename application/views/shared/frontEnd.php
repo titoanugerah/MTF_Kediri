@@ -65,25 +65,7 @@
 
     </div>
   </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1">
-          <h1>Bettter digital experience with Ninestars</h1>
-          <h2>We are team of talented designers making websites with Bootstrap</h2>
-          <a href="<?php echo base_url('./assets/template/frontend/'); ?>#about" class="btn-get-started scrollto">Get Started</a>
-        </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img">
-          <img src="<?php echo base_url('./assets/template/frontend/'); ?>assets/img/hero-img.svg" class="img-fluid animated" alt="">
-        </div>
-      </div>
-    </div>
-
-  </section><!-- End Hero -->
-
+  
   <main id="main">
 
     <?php $this->load->view($viewName); ?>
