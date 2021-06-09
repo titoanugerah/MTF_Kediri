@@ -64,6 +64,9 @@ $route['home'] = 'home';
 $route['product'] = 'product';
 $route['product/(:any)'] = 'product/detail/$1';
 
+#PAGE
+$route['page/(:any)'] = 'page/index/$1';
+
 $route['template'] = 'general/template';
 $route['404_override'] = 'errors';
 $route['translate_uri_dashes'] = FALSE;

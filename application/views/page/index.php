@@ -1,6 +1,5 @@
 
-<section>
-  <img src="<?php echo base_url('./assets/picture/'.$content->image); ?>" class="img-fluid" style="width:3000px">
+  <img src="<?php echo base_url('assets/picture/'.$content->image); ?>" class="img-fluid" style="width:3000px">
   <div class="container">
     <div class="row justify-content-between">
       <div class="col-lg-12 pt-5 pt-lg-0">
@@ -11,4 +10,3 @@
       </div>
     </div>
   </div>
-</section><!-- End About Section -->
