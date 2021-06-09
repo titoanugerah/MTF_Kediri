@@ -29,6 +29,7 @@ class Home_model extends CI_Model
         $data['product'] = $this->core_model->readAllData('product');
         $data['promo'] = $this->core_model->readSomeData('page', 'pageCategoryId', 2);
         $data['program'] = $this->core_model->readSomeData('page', 'pageCategoryId', 3);
+        $data['wira'] = $this->core_model->readSingleData('page', 'id', 5);
         $data['viewName'] = 'home/index';
         return $data;
     }
