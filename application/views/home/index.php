@@ -168,7 +168,7 @@
         </div>
         <div class="form-group col-md-3">
           <label for="name">Pekerjaan</label>
-            <input type="email" class="form-control" name="pekerjaan" id="pekerjaan"/>
+            <input type="text" class="form-control" name="pekerjaan" id="pekerjaan"/>
           <div class="validate"></div>
         </div>
 
