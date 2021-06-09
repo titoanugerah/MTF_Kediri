@@ -13,7 +13,10 @@ class Home extends CI_Controller
   }
 
   public function index(){
-   $this->load->view('shared/frontEnd', $this->home_model->content());
+    if($this->input->post('signUp')){
+      $this->home_model->signUp();
+    } 
+    $this->load->view('shared/frontEnd', $this->home_model->content());
   }
 
 }

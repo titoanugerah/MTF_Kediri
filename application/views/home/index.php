@@ -126,7 +126,7 @@
 
     <div class="row">
 
-      <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+      <form method="post"  class="php-email-form">
         <div class="form-row">
           <div class="form-group col-md-3">
             <label for="name">Nama</label>
@@ -173,7 +173,7 @@
         </div>
 
       </form>
-      <div class="text-center"><button type="submit">Daftar</button></div>
+      <div class="text-center"><button type="submit" name="signup" value="signup">Daftar</button></div>
       </div>
     </div>
   </div>

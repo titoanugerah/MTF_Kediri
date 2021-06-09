@@ -39,6 +39,13 @@ class Home_model extends CI_Model
     }
   }
 
+  public function signUp()
+  {
+    $data = $this->input->post();
+    unset($data['signUp']);
+    $this->core_model->createData('wira', $data);
+  }
+
 
 }
 
