@@ -52,6 +52,7 @@
           <li class="active"><a href="<?php if($viewName=="home/index"){echo "#home";} else { echo base_url('home');} ?>">Beranda</a></li>
           <li><a href="<?php if($viewName=="home/index"){echo "#product";} else { echo base_url('home#product');} ?>">Produk</a></li>
           <li><a href="<?php if($viewName=="home/index"){echo "#terms";} else { echo base_url('home#terms');} ?>">Syarat</a></li>
+          <li><a href="<?php if($viewName=="home/index"){echo "#wira";} else { echo base_url('home#wira');} ?>">Mandiri Wira</a></li>
           <li><a href="<?php if($viewName=="home/index"){echo "#program";} else { echo base_url('home#program');} ?>">Program Of The Month</a></li>
           <li class="drop-down"><a href="#">Lain Lain</a>
             <ul>

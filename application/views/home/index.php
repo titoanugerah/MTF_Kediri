@@ -60,7 +60,7 @@
   </div>
 </section>
 
-<section id="terms" class="about">
+<section id="terms" >
   <div class="container">
     <div class="section-title" data-aos="fade-up">
       <h2><?php echo $terms->name; ?></h2>
@@ -76,7 +76,7 @@
   </div>
 </section>
 
-<section id="program" class="program">
+<section id="program" >
   <div class="container">
     <div class="section-title" data-aos="fade-up">
       <h2>Program Of The Month</h2>
@@ -86,52 +86,64 @@
 </section>
 
 
-<section id="contact" class="contact">
+<section id="wira" class="contact">
   <div class="container">
 
     <div class="section-title" data-aos="fade-up">
-      <h2>Hubungi Kami</h2>
+      <h2>Mandiri Wira</h2>
     </div>
 
     <div class="row">
 
         <form action="forms/contact.php" method="post" role="form" class="php-email-form">
           <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-3">
               <label for="name">Nama</label>
-              <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Mohon masukan nama yang valid" />
               <div class="validate"></div>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-3">
               <label for="name">No KTP</label>
-              <input type="text" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+              <input type="text" class="form-control" name="ktp" id="ktp" data-rule="minlen:16" data-msg="Mohon masukan KTP yang valid" />
               <div class="validate"></div>
             </div>
-          </div>
-          <div class="form-group">
+          <div class="form-group col-md-3">
             <label for="name">NPWP</label>
-`               <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <input type="text" class="form-control" name="npwp" id="npwp" data-rule="minlen:16" data-msg="Mohon masukan nomor NPWP yang valid" />
             <div class="validate"></div>
           </div>
-          <div class="form-group">
+          <div class="form-group col-md-3">
             <label for="name">Nomor Rekening</label>
-            <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+              <input type="text" class="form-control" name="rekening" id="rekening"  />
             <div class="validate"></div>
           </div>
-          <div class="form-group">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-3">
+            <label for="name">Nomor Handphone</label>
+              <input type="text" class="form-control" name="hp" id="hp" data-rule="minlen:10" data-msg="Mohon masukan nomor HP yang valid" />
+            <div class="validate"></div>
+          </div>
+          <div class="form-group col-md-3">
+            <label for="name">Alamat Lengkap</label>
+              <input type="text" class="form-control" name="alamat" id="alamat" />
+            <div class="validate"></div>
+          </div>
+          <div class="form-group col-md-3">
             <label for="name">Email</label>
-            <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+              <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Mohon masukan alamat email yang valid"/>
             <div class="validate"></div>
           </div>
-          <div class="form-group">
+          <div class="form-group col-md-3">
             <label for="name">Pekerjaan</label>
-            <textarea class="form-control" name="message" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+              <input type="email" class="form-control" name="pekerjaan" id="pekerjaan"/>
             <div class="validate"></div>
           </div>
 
-
-          <div class="text-center"><button type="submit">Send Message</button></div>
         </form>
+          <div class="text-center"><button type="submit">Daftar</button></div>
+      </div>
 
     </div>
 
